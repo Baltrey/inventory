@@ -3,18 +3,20 @@ using System.Dynamic;
 public class Item
 {
     public string Name;
-    int _space = 1;
+
+    int _space;
     public int Space
     {
         get
         {
-            return _space;
+            Space = _space;
+            return Space;
         }
         set
         {
             if (value > 0 && value < 20)
             {
-                _space = value;
+                Space = value;
             }
         }
     }

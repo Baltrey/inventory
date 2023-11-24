@@ -1,6 +1,11 @@
 ﻿//items
 //name,space, 
-Item item = new();
-item.Space += 30;
-Console.WriteLine(item.Space);
+Ground ground = new();
+inventory inventory = new();
+
+while (true)
+{
+    Console.WriteLine("På marken finns det ");
+    ground.ListItems();
+}
 Console.ReadLine();
