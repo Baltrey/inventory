@@ -1,15 +1,17 @@
 public class Ground
 {
-    Item item = new();
     public List<Item> items = new() { };
+    //skapar en lista items
 
-    public void ListItems()
+    public void ListItemsGround()
     {
+        Console.WriteLine("På marken finns det ");
         foreach (Item i in items)
         {
-            Console.WriteLine(i.Name);
+            Console.Write(i.Name + ", ");
         }
     }
+    //void för att skriva ut alla items
 
     public Ground()
     {
@@ -18,6 +20,7 @@ public class Ground
 
         for (int i = 0; i < 16; i++)
         {
+            Item item = new();
             int number = Random.Shared.Next(Names.Count);
             item.Name = Names[number];
             item.Space = Random.Shared.Next(1, 20);
@@ -25,5 +28,5 @@ public class Ground
         }
 
     }
-
+    //skapar alla items i ground
 }

@@ -2,18 +2,17 @@ using System.Dynamic;
 
 public class inventory
 {
-    int _inventorySpace = 20;
-    public int InventorySpace
-    {
-        get
-        {
-            InventorySpace = _inventorySpace;
-            return InventorySpace;
-        }
-        set
-        {
+    public readonly int InventorySpace = 20;
 
+    //gör så man inte kan ändra på värdet på space
+    public List<Item> items = new();
+    public void ListItemsInventory()
+    {
+        Console.WriteLine("Du har: ");
+        foreach (Item i in items)
+        {
+            Console.Write(i.Name + ", ");
         }
     }
-    public List<Item> content = new();
 }
+//skapar classen inventory med en lista som kan innehålla items
