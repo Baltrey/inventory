@@ -10,8 +10,9 @@ while (true)
     while (Game)
     {
         int i = answer();
-        if ((inventory.InventorySpace - ground.items[i].Space) >= 0)
+        if (inventory.InventorySpace > 0)
         {
+            inventory.InventorySpace -= ground.items[i].Space;
             inventory.items.Add(ground.items[i]);
             ground.items.RemoveAt(i);
             inventory.ListItemsInventory();
