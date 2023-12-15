@@ -22,7 +22,7 @@ public class Ground
 
         }
     }
-    //void för att skriva ut alla items
+    //void för att skriva ut alla items i ground som skriver även ut weight och Length om de har det
 
     public Ground()
     {
@@ -56,6 +56,7 @@ public class Ground
                 items.Add(item);
             }
         }
+        //skapar alla items med weight och de som inte ska ha weight i ground
         for (int i = 0; i < 6; i++)
         {
             Weapon weapon = new();
@@ -76,6 +77,6 @@ public class Ground
 
 
         }
-        //skapar alla items i ground
+        //skapar weapon items i ground
     }
 }

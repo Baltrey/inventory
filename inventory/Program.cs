@@ -6,10 +6,11 @@ bool Game = true;
 
 while (true)
 {
+    Game = true;
     ground.ListItemsGround();
     while (Game)
     {
-        int i = answer();
+        int i = (answer() - 1);
         if (inventory.InventorySpace > 0)
         {
             inventory.InventorySpace -= ground.items[i].Space;
@@ -17,6 +18,11 @@ while (true)
             ground.items.RemoveAt(i);
             inventory.ListItemsInventory();
         }
+        else
+        {
+            Game = false;
+        }
+        ground.ListItemsGround();
     }
 }
 //main loopen för spelet
@@ -26,11 +32,11 @@ while (true)
 int answer()
 {
     Console.WriteLine("");
-    Console.WriteLine("Skriv ett nummer mellan 0-15");
+    Console.WriteLine("Skriv ett nummer mellan 1-15");
     while (true)
     {
         int j = GetNummber();
-        if (j >= 0 && j < 16)
+        if (j > 0 && j < 16)
         {
 
             return j;

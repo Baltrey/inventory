@@ -22,7 +22,7 @@ public class inventory
         {
             if (value > 0 && value < 21)
             {
-                _inventorySpace = InventorySpace;
+                _inventorySpace = value;
             }
         }
     }
@@ -31,6 +31,7 @@ public class inventory
     public Stack<Item> items = new();
     public void ListItemsInventory()
     {
+        Console.Clear();
         Console.WriteLine("Du har: ");
         foreach (Item i in items)
         {
@@ -45,6 +46,8 @@ public class inventory
             Console.Write(i.Name + ", ");
 
         }
+        Console.WriteLine("och plats kvar i inventory " + InventorySpace);
+        //void för att skriva ut alla items i inventory som skriver även ut weight och Length om de har det
     }
 }
 //skapar classen inventory med en lista som kan innehålla items

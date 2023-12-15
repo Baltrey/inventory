@@ -28,7 +28,7 @@ public class WeightedItems : Item
 {
     public string? Weight;
 }
-
+//skapar subclass weighted items av item
 public class Weapon : WeightedItems
 {
     public string? Length;
