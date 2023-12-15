@@ -30,3 +30,4 @@ public class weapon : Item
     public string IsLong = "Long ";
 
 }
+//Skapar en subclass Weapon

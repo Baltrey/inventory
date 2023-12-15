@@ -13,7 +13,7 @@ while (true)
         if (inventory.InventorySpace > 0)
         {
             inventory.InventorySpace -= ground.items[i].Space;
-            inventory.items.Add(ground.items[i]);
+            inventory.items.Push(ground.items[i]);
             ground.items.RemoveAt(i);
             inventory.ListItemsInventory();
         }

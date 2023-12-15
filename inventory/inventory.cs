@@ -28,7 +28,7 @@ public class inventory
     }
 
     //gör så man inte kan ändra på värdet på space
-    public List<Item> items = new();
+    public Stack<Item> items = new();
     public void ListItemsInventory()
     {
         Console.WriteLine("Du har: ");
