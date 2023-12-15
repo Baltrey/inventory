@@ -24,3 +24,9 @@ public class Item
     //sätter gränserna att ett items space value bara kan vara mellan 0 och 20
 }
 //skapar klassen items
+public class weapon : Item
+{
+    public string IsShort = "Short ";
+    public string IsLong = "Long ";
+
+}
