@@ -2,7 +2,7 @@ using System.Dynamic;
 
 public class Item
 {
-    public string Name;
+    public string? Name;
     //items namn
 
     int _space;
@@ -24,10 +24,14 @@ public class Item
     //sätter gränserna att ett items space value bara kan vara mellan 0 och 20
 }
 //skapar klassen items
-public class weapon : Item
+public class WeightedItems : Item
 {
-    public string IsShort = "Short ";
-    public string IsLong = "Long ";
+    public string? Weight;
+}
+
+public class Weapon : WeightedItems
+{
+    public string? Length;
 
 }
-//Skapar en subclass Weapon
+//Skapar en subclass Weapon av Weight

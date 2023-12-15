@@ -22,6 +22,7 @@ while (true)
 //main loopen för spelet
 
 
+
 int answer()
 {
     Console.WriteLine("");
@@ -55,6 +56,15 @@ int GetNummber()
     while (!int.TryParse(i, out j) == true)
     {
         i = Console.ReadLine();
+        if ((!int.TryParse(i, out j) == true))
+        {
+            Console.WriteLine("SKRIV ETT NUMMER!!!!");
+
+            for (int s = 0; s < 10; s++)
+            {
+                Console.Beep(2000, 100);
+            }
+        }
     }
     return j;
 }

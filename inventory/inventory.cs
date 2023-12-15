@@ -34,9 +34,17 @@ public class inventory
         Console.WriteLine("Du har: ");
         foreach (Item i in items)
         {
+            if (i is WeightedItems)
+            {
+                Console.Write(((WeightedItems)i).Weight);
+            }
+            if (i is Weapon)
+            {
+                Console.Write(((Weapon)i).Length);
+            }
             Console.Write(i.Name + ", ");
+
         }
-        Console.Write("Och har " + InventorySpace + " plats kvar");
     }
 }
 //skapar classen inventory med en lista som kan innehålla items

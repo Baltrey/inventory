@@ -10,14 +10,23 @@ public class Ground
         Console.WriteLine("På marken finns det ");
         foreach (Item i in items)
         {
+            if (i is WeightedItems)
+            {
+                Console.Write(((WeightedItems)i).Weight);
+            }
+            if (i is Weapon)
+            {
+                Console.Write(((Weapon)i).Length);
+            }
             Console.Write(i.Name + ", ");
+
         }
     }
     //void för att skriva ut alla items
 
     public Ground()
     {
-        List<string> NamesItem = new() { "Pouch", "Gold Ingot", "Arrows", "Copper Ingot", "Iron Ingot" };
+        List<string> NamesItem = new() { "Pouch", "Arrows", "Copper Ingot", "Iron Ingot", "Gold Ingot" };
         List<string> NamesWeapon = new() { "Axe", "Sword", "Bow", "Dagger", "Pickaxe" };
 
 
@@ -25,25 +34,44 @@ public class Ground
         {
             Item item = new();
             int number = Random.Shared.Next(NamesItem.Count);
-            item.Name = NamesItem[number];
-            item.Space = Random.Shared.Next(1, 20);
-            items.Add(item);
-        }
-        for (int i = 0; i < 6; i++)
-        {
-            weapon weapon = new();
-            int number = Random.Shared.Next(NamesWeapon.Count);
-            weapon.Name = NamesWeapon[number];
-            if (i % 2 == 0)
+            if (number > 1)
             {
-                weapon.Name = weapon.IsLong + NamesWeapon[number];
+                WeightedItems weightedItems = new();
+                if (i % 2 == 0)
+                {
+                    weightedItems.Weight = "Light ";
+                }
+                else
+                {
+                    weightedItems.Weight = "Heavy ";
+                }
+                weightedItems.Name = NamesItem[number];
+                weightedItems.Space = Random.Shared.Next(1, 20);
+                items.Add(weightedItems);
             }
             else
             {
-                weapon.Name = weapon.IsShort + NamesWeapon[number];
+                item.Name = NamesItem[number];
+                item.Space = Random.Shared.Next(1, 20);
+                items.Add(item);
             }
-
+        }
+        for (int i = 0; i < 6; i++)
+        {
+            Weapon weapon = new();
+            int number = Random.Shared.Next(NamesWeapon.Count);
+            weapon.Name = NamesWeapon[number];
             weapon.Space = Random.Shared.Next(1, 20);
+            if (i % 2 == 0)
+            {
+                weapon.Weight = "Light ";
+                weapon.Length = "Short ";
+            }
+            else
+            {
+                weapon.Weight = "Heavy ";
+                weapon.Length = "Long ";
+            }
             items.Add(weapon);
 
 
