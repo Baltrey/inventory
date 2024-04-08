@@ -1,6 +1,4 @@
-﻿//items
-//name,space, 
-Ground ground = new();
+﻿Ground ground = new();
 inventory inventory = new();
 bool Game = true;
 
@@ -51,6 +49,7 @@ int answer()
                 Console.Beep(2000, 100);
             }
         }
+        //ger instruktioner ifall fel input
     }
 }
 //får ett answer och retunerar en int
