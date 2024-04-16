@@ -26,14 +26,14 @@ public class Ground
 
     public Ground()
     {
-        List<string> NamesItem = new() { "Pouch", "Arrows", "Copper Ingot", "Iron Ingot", "Gold Ingot" };
-        List<string> NamesWeapon = new() { "Axe", "Sword", "Bow", "Dagger", "Pickaxe" };
+        string[] NamesItem = { "Pouch", "Arrows", "Copper Ingot", "Iron Ingot", "Gold Ingot" };
+        string[] NamesWeapon = { "Axe", "Sword", "Bow", "Dagger", "Pickaxe" };
 
 
         for (int i = 0; i < 6; i++)
         {
             Item item = new();
-            int number = Random.Shared.Next(NamesItem.Count);
+            int number = Random.Shared.Next(NamesItem.Length);
             if (number > 1)
             {
                 WeightedItems weightedItems = new();
@@ -60,9 +60,10 @@ public class Ground
         for (int i = 0; i < 6; i++)
         {
             Weapon weapon = new();
-            int number = Random.Shared.Next(NamesWeapon.Count);
+            int number = Random.Shared.Next(NamesWeapon.Length);
             weapon.Name = NamesWeapon[number];
             weapon.Space = Random.Shared.Next(1, 20);
+            //skapar ett vapen från klassen och sätter ut namn och space med hjälp av random generator och tidigare array
             if (i % 2 == 0)
             {
                 weapon.Weight = "Light ";
@@ -74,7 +75,7 @@ public class Ground
                 weapon.Length = "Long ";
             }
             items.Add(weapon);
-
+            //
 
         }
         //skapar weapon items i ground

@@ -1,5 +1,6 @@
 ﻿Ground ground = new();
 inventory inventory = new();
+//skapar ground och inventory från klasserna ground och inventory i main programet
 bool Game = true;
 //variabeln för spelet
 

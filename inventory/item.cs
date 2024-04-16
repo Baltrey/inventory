@@ -34,4 +34,9 @@ public class Weapon : WeightedItems
     public string? Length;
 
 }
-//Skapar en subclass Weapon av Weight
+public class Shiny : Weapon
+{
+    public string shiny;
+
+}
+//Skapar en subclass Weapon av Weighteditems
