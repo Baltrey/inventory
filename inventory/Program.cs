@@ -1,6 +1,7 @@
 ﻿Ground ground = new();
 inventory inventory = new();
 bool Game = true;
+//variabeln för spelet
 
 while (true)
 {
@@ -16,6 +17,7 @@ while (true)
             ground.items.RemoveAt(i);
             inventory.ListItemsInventory();
         }
+        //kollar om inventory space är mer än 0, om det är det kör spelet vidare. Annars stängs det av.
         else
         {
             Game = false;
@@ -39,6 +41,7 @@ int answer()
 
             return j;
         }
+        //kollar att numret är inom det angivna intervalet
 
         else
         {
@@ -67,10 +70,14 @@ int GetNummber()
 
             for (int s = 0; s < 10; s++)
             {
-                Console.Beep(2000, 100);
+                Console.Beep(2000, 500);
+                Thread.Sleep(200);
             }
         }
+        //kollar att det är ett nummer, om inte ger användaren instruktioner att det är fel
     }
+    //kör loopen tills användaren har skrivit ett nummer, sammt gör en try parse med answer och kollar att det går
     return j;
+    //retunerar numret som j
 }
 //kollar så att det är ett nummer och inte text

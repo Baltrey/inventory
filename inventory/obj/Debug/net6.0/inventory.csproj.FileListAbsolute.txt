@@ -3,7 +3,6 @@ C:\Users\baltazar.biverstal\Documents\programering2\inventory\inventory\bin\Debu
 C:\Users\baltazar.biverstal\Documents\programering2\inventory\inventory\bin\Debug\net6.0\inventory.runtimeconfig.json
 C:\Users\baltazar.biverstal\Documents\programering2\inventory\inventory\bin\Debug\net6.0\inventory.dll
 C:\Users\baltazar.biverstal\Documents\programering2\inventory\inventory\bin\Debug\net6.0\inventory.pdb
-C:\Users\baltazar.biverstal\Documents\programering2\inventory\inventory\obj\Debug\net6.0\inventory.csproj.AssemblyReference.cache
 C:\Users\baltazar.biverstal\Documents\programering2\inventory\inventory\obj\Debug\net6.0\inventory.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\baltazar.biverstal\Documents\programering2\inventory\inventory\obj\Debug\net6.0\inventory.AssemblyInfoInputs.cache
 C:\Users\baltazar.biverstal\Documents\programering2\inventory\inventory\obj\Debug\net6.0\inventory.AssemblyInfo.cs
@@ -13,3 +12,4 @@ C:\Users\baltazar.biverstal\Documents\programering2\inventory\inventory\obj\Debu
 C:\Users\baltazar.biverstal\Documents\programering2\inventory\inventory\obj\Debug\net6.0\inventory.pdb
 C:\Users\baltazar.biverstal\Documents\programering2\inventory\inventory\obj\Debug\net6.0\inventory.genruntimeconfig.cache
 C:\Users\baltazar.biverstal\Documents\programering2\inventory\inventory\obj\Debug\net6.0\ref\inventory.dll
+c:\Users\baltazar.biverstal\Documents\programering2\inventory\inventory\obj\Debug\net6.0\inventory.sourcelink.json

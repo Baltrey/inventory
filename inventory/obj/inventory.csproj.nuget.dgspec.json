@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\baltazar.biverstal\\Documents\\programering2\\inventory\\inventory\\inventory.csproj": {}
+    "c:\\Users\\baltazar.biverstal\\Documents\\programering2\\inventory\\inventory\\inventory.csproj": {}
   },
   "projects": {
-    "C:\\Users\\baltazar.biverstal\\Documents\\programering2\\inventory\\inventory\\inventory.csproj": {
+    "c:\\Users\\baltazar.biverstal\\Documents\\programering2\\inventory\\inventory\\inventory.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\baltazar.biverstal\\Documents\\programering2\\inventory\\inventory\\inventory.csproj",
+        "projectUniqueName": "c:\\Users\\baltazar.biverstal\\Documents\\programering2\\inventory\\inventory\\inventory.csproj",
         "projectName": "inventory",
-        "projectPath": "C:\\Users\\baltazar.biverstal\\Documents\\programering2\\inventory\\inventory\\inventory.csproj",
+        "projectPath": "c:\\Users\\baltazar.biverstal\\Documents\\programering2\\inventory\\inventory\\inventory.csproj",
         "packagesPath": "C:\\Users\\baltazar.biverstal\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\baltazar.biverstal\\Documents\\programering2\\inventory\\inventory\\obj\\",
+        "outputPath": "c:\\Users\\baltazar.biverstal\\Documents\\programering2\\inventory\\inventory\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\baltazar.biverstal\\AppData\\Roaming\\NuGet\\NuGet.Config"

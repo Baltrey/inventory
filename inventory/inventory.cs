@@ -42,6 +42,7 @@ public class inventory
             if (i is Weapon)
             {
                 Console.Write(((Weapon)i).Length);
+                Console.Write(((Weapon)i).Weight);
             }
             Console.Write(i.Name + ", ");
 
