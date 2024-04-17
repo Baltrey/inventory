@@ -24,6 +24,10 @@ public class inventory
             {
                 _inventorySpace = value;
             }
+            else
+            {
+                _inventorySpace = 0;
+            }
         }
     }
 

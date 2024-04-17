@@ -55,6 +55,7 @@ public class Ground
                 item.Space = Random.Shared.Next(1, 20);
                 items.Add(item);
             }
+            //sätter ut heavy på alla items som kan vara heavy
         }
         //skapar alla items med weight och de som inte ska ha weight i ground
         for (int i = 0; i < 6; i++)
@@ -75,7 +76,7 @@ public class Ground
                 weapon.Length = "Long ";
             }
             items.Add(weapon);
-            //
+            //sätter heavy och long på varanan vapen, dervärsa med ligth
 
         }
         //skapar weapon items i ground
