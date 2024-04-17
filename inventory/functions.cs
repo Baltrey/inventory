@@ -1,9 +1,10 @@
 using System.Dynamic;
-public class commands
+using System.Runtime.CompilerServices;
+public class funtion
 {
     public int GetNummber()
     {
-        string i = "";
+        string? i = "";
 
         int j;
         while (!int.TryParse(i, out j) == true)
@@ -12,7 +13,7 @@ public class commands
             if ((!int.TryParse(i, out j) == true))
             {
                 Console.WriteLine("SKRIV ETT NUMMER!!!!");
-                inventory.Beep();
+                Beep();
 
             }
             //kollar att det är ett nummer, om inte ger användaren instruktioner att det är fel
@@ -39,7 +40,7 @@ public class commands
             else
             {
                 Console.WriteLine("SKRIV ETT NUMMER MELLAN 1-15!!!!");
-                inventory.Beep();
+                Beep();
             }
             //ger instruktioner ifall fel input
         }
@@ -55,4 +56,19 @@ public class commands
         //kör loopen 10 gånger
     }
     //lägger till en beep funtion
+    public bool playagain()
+    {
+        Console.WriteLine("vill du köra igen Y/N");
+        string? i = Console.ReadLine();
+        if (i.ToUpper() == "Y")
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+    }
+    //funktion för att spelaren ska kunna köra igen, kollar input Y/N
 }
