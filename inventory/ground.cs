@@ -7,6 +7,7 @@ public class Ground
 
     public void ListItemsGround()
     {
+        Console.WriteLine("");
         Console.WriteLine("På marken finns det ");
         foreach (Item i in items)
         {
@@ -18,14 +19,15 @@ public class Ground
             {
                 Console.Write(((Weapon)i).Length);
             }
-            Console.Write(i.Name + ", ");
+            Console.Write(i.Name + "(" + i.Space + ")" + ", ");
 
         }
     }
     //void för att skriva ut alla items i ground som skriver även ut weight och Length om de har det
 
-    public Ground()
+    public void Groundstart()
     {
+        items.Clear();
         string[] NamesItem = { "Pouch", "Arrows", "Copper Ingot", "Iron Ingot", "Gold Ingot" };
         string[] NamesWeapon = { "Axe", "Sword", "Bow", "Dagger", "Pickaxe" };
 
@@ -65,18 +67,26 @@ public class Ground
             weapon.Name = NamesWeapon[number];
             weapon.Space = Random.Shared.Next(1, 20);
             //skapar ett vapen från klassen och sätter ut namn och space med hjälp av random generator och tidigare array
-            if (i % 2 == 0)
-            {
-                weapon.Weight = "Light ";
-                weapon.Length = "Short ";
+            if (weapon.Space >= 18){
+                Shiny shinyWeapon = new();
+                shinyWeapon.Name = weapon.Name;
+                shinyWeapon.Space = weapon.Space;
+                shinyWeapon.shiny = true;
             }
-            else
-            {
-                weapon.Weight = "Heavy ";
-                weapon.Length = "Long ";
+            else{
+                if (i % 2 == 0)
+                {
+                    weapon.Weight = "Light ";
+                    weapon.Length = "Short ";
+                }
+                else
+                {
+                    weapon.Weight = "Heavy ";
+                    weapon.Length = "Long ";
+                }
+                items.Add(weapon);
+                //sätter heavy och long på varanan vapen, dervärsa med ligth
             }
-            items.Add(weapon);
-            //sätter heavy och long på varanan vapen, dervärsa med ligth
 
         }
         //skapar weapon items i ground

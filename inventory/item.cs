@@ -36,7 +36,7 @@ public class Weapon : WeightedItems
 }
 public class Shiny : Weapon
 {
-    public string shiny;
+    public bool shiny;
 
 }
 //Skapar en subclass Weapon av Weighteditems

@@ -2,18 +2,19 @@
 
 Ground ground = new();
 inventory inventory = new();
-funtion funtion = new();
+function function = new();
 //skapar ground och inventory från klasserna ground och inventory i main programet, samt functions för kommandon
 bool Game = true;
 //variabeln för spelet
 
 while (true)
 {
+    ground.Groundstart();
     Game = true;
     ground.ListItemsGround();
     while (Game)
     {
-        int i = (funtion.answer() - 1);
+        int i = (function.answer(ground.items.Count) - 1);
         if (inventory.InventorySpace > 0)
         {
             inventory.InventorySpace = inventory.InventorySpace - ground.items[i].Space;
@@ -29,9 +30,10 @@ while (true)
         }
     }
 
-    if (funtion.playagain())
+    if (function.playagain())
     {
-        inventory.InventorySpace = 20;
+        inventory.Reset();
+        ground.Groundstart();
     }
     else
     {

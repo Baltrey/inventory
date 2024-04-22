@@ -1,6 +1,6 @@
 using System.Dynamic;
 using System.Runtime.CompilerServices;
-public class funtion
+public class function
 {
     public int GetNummber()
     {
@@ -13,7 +13,6 @@ public class funtion
             if ((!int.TryParse(i, out j) == true))
             {
                 Console.WriteLine("SKRIV ETT NUMMER!!!!");
-                Beep();
 
             }
             //kollar att det är ett nummer, om inte ger användaren instruktioner att det är fel
@@ -23,14 +22,14 @@ public class funtion
         //retunerar numret som j
     }
     //kollar så att det är ett nummer och inte text
-    public int answer()
+    public int answer(int groundAmount)
     {
         Console.WriteLine("");
-        Console.WriteLine("Skriv ett nummer mellan 1-15");
+        Console.WriteLine("Skriv ett nummer mellan 1-" + groundAmount);
         while (true)
         {
             int j = GetNummber();
-            if (j > 0 && j < 16)
+            if (j > 0 && j <= groundAmount)
             {
 
                 return j;
@@ -39,8 +38,7 @@ public class funtion
 
             else
             {
-                Console.WriteLine("SKRIV ETT NUMMER MELLAN 1-15!!!!");
-                Beep();
+                Console.WriteLine("SKRIV ETT NUMMER MELLAN 1-" + groundAmount + "!!!!");
             }
             //ger instruktioner ifall fel input
         }
@@ -58,10 +56,14 @@ public class funtion
     //lägger till en beep funtion
     public bool playagain()
     {
+        Console.Clear();
+        Console.WriteLine("Du fick slut på plats i ditt inventory");
+        Console.WriteLine("");
         Console.WriteLine("vill du köra igen Y/N");
         string? i = Console.ReadLine();
         if (i.ToUpper() == "Y")
         {
+            Console.Clear();
             return true;
         }
         else

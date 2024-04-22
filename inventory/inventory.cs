@@ -54,5 +54,11 @@ public class inventory
         Console.WriteLine("och plats kvar i inventory " + InventorySpace);
         //void för att skriva ut alla items i inventory som skriver även ut weight och Length om de har det
     }
+    public void Reset()
+    {
+        _inventorySpace = 20;
+        items.Clear();
+    }
+    //startar om inventory, tar bort allt i det och tar upp space till max
 }
 //skapar classen inventory med en lista som kan innehålla items
