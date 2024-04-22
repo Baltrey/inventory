@@ -67,26 +67,29 @@ public class Ground
             weapon.Name = NamesWeapon[number];
             weapon.Space = Random.Shared.Next(1, 20);
             //skapar ett vapen från klassen och sätter ut namn och space med hjälp av random generator och tidigare array
-            if (weapon.Space >= 18){
-                Shiny shinyWeapon = new();
-                shinyWeapon.Name = weapon.Name;
-                shinyWeapon.Space = weapon.Space;
-                shinyWeapon.shiny = true;
+            if (weapon.Space >= 18)
+            {
+                weapon.Name = "Shiny " + weapon.Name;
+                // Shiny shinyWeapon = new();
+                // shinyWeapon.Name = weapon.Name;
+                // shinyWeapon.Space = weapon.Space;
+                // shinyWeapon.shiny = true;
             }
-            else{
-                if (i % 2 == 0)
-                {
-                    weapon.Weight = "Light ";
-                    weapon.Length = "Short ";
-                }
-                else
-                {
-                    weapon.Weight = "Heavy ";
-                    weapon.Length = "Long ";
-                }
-                items.Add(weapon);
-                //sätter heavy och long på varanan vapen, dervärsa med ligth
+
+            weapon.Weight = i % 2 == 0 ? "Light" : "Heavy";
+
+            if (i % 2 == 0)
+            {
+                weapon.Weight = "Light ";
+                weapon.Length = "Short ";
             }
+            else
+            {
+                weapon.Weight = "Heavy ";
+                weapon.Length = "Long ";
+            }
+            items.Add(weapon);
+            //sätter heavy och long på varanan vapen, dervärsa med ligth
 
         }
         //skapar weapon items i ground
