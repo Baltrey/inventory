@@ -11,9 +11,9 @@ public class Ground
         Console.WriteLine("På marken finns det ");
         foreach (Item i in items)
         {
-            if (i is WeightedItems)
+            if (i is WeightedItem)
             {
-                Console.Write(((WeightedItems)i).Weight);
+                Console.Write(((WeightedItem)i).Weight);
             }
             if (i is Weapon)
             {
@@ -31,36 +31,16 @@ public class Ground
 
         for (int i = 0; i < 6; i++)
         {
-            WeightedItems item = new();
-            int number = Random.Shared.Next(item.NamesWeightedItems.Length);
-            item.Name = item.getNames(number);
-            item.Weight = item.GetWeight(i);
-            //borde ändra
+            WeightedItem item = new();
             items.Add(item);
             //sätter ut heavy på alla items som kan vara heavy
         }
-        //skapar alla items med weight och de som inte ska ha weight i ground
+        //skapar items och sätter de i listan items
         for (int i = 0; i < 6; i++)
         {
             Weapon weapon = new();
-            int number = Random.Shared.Next(weapon.NamesWeapon.Length);
-            weapon.Name = weapon.getNames(number);
-            //hämtar namn
-            weapon.Length = weapon.Getlength(i);
-            weapon.Weight = weapon.GetWeight(i);
-            //sätter heavy och long på varanan vapen, dervärsa med ligth
-            //skapar ett vapen från klassen och sätter ut namn och space med hjälp av random generator och tidigare array
-            if (weapon.Space >= 18)
-            {
-                weapon.Name = "Shiny " + weapon.Name;
-                // Shiny shinyWeapon = new();
-                // shinyWeapon.Name = weapon.Name;
-                // shinyWeapon.Space = weapon.Space;
-                // shinyWeapon.shiny = true;
-            }
-            //borde ändra senare
             items.Add(weapon);
         }
-        //skapar weapon items i ground
+        //skapar weapon items i listan items
     }
 }

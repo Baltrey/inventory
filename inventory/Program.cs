@@ -1,8 +1,8 @@
 ﻿using System.Reflection.Metadata.Ecma335;
 
 Ground ground = new();
-inventory inventory = new();
-function function = new();
+Inventory inventory = new();
+Function function = new();
 //skapar ground och inventory från klasserna ground och inventory i main programet, samt functions för kommandon
 bool Game = true;
 //variabeln för spelet
@@ -14,11 +14,11 @@ while (true)
     ground.ListItemsGround();
     while (Game)
     {
-        int i = (function.answer(ground.items.Count) - 1);
+        int i = (function.Answer(ground.items.Count) - 1);
         if (inventory.InventorySpace > 0)
         {
             inventory.InventorySpace = inventory.InventorySpace - ground.items[i].Space;
-            inventory.items.Push(ground.items[i]);
+            inventory.Items.Push(ground.items[i]);
             ground.items.RemoveAt(i);
             inventory.ListItemsInventory();
             ground.ListItemsGround();
@@ -30,7 +30,7 @@ while (true)
         }
     }
 
-    if (function.playagain())
+    if (function.PlayAgain())
     {
         inventory.Reset();
         ground.Groundstart();

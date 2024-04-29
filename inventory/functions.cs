@@ -1,6 +1,6 @@
 using System.Dynamic;
 using System.Runtime.CompilerServices;
-public class function
+public class Function
 {
     public int GetNummber()
     {
@@ -22,7 +22,7 @@ public class function
         //retunerar numret som j
     }
     //kollar så att det är ett nummer och inte text
-    public int answer(int groundAmount)
+    public int Answer(int groundAmount)
     {
         Console.WriteLine("");
         Console.WriteLine("Skriv ett nummer mellan 1-" + groundAmount);
@@ -54,7 +54,7 @@ public class function
         //kör loopen 10 gånger
     }
     //lägger till en beep funtion
-    public bool playagain()
+    public bool PlayAgain()
     {
         Console.Clear();
         Console.WriteLine("Du fick slut på plats i ditt inventory");

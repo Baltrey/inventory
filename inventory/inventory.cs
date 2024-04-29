@@ -1,6 +1,6 @@
 using System.Dynamic;
 
-public class inventory
+public class Inventory
 {
     int _inventorySpace = 20;
     public int InventorySpace
@@ -32,16 +32,16 @@ public class inventory
     }
 
     //gör så man inte kan ändra på värdet på space
-    public Stack<Item> items = new();
+    public Stack<Item> Items = new();
     public void ListItemsInventory()
     {
         Console.Clear();
         Console.WriteLine("Du har: ");
-        foreach (Item i in items)
+        foreach (Item i in Items)
         {
-            if (i is WeightedItems)
+            if (i is WeightedItem)
             {
-                Console.Write(((WeightedItems)i).Weight);
+                Console.Write(((WeightedItem)i).Weight);
             }
             if (i is Weapon)
             {
@@ -57,7 +57,7 @@ public class inventory
     public void Reset()
     {
         _inventorySpace = 20;
-        items.Clear();
+        Items.Clear();
     }
     //startar om inventory, tar bort allt i det och tar upp space till max
 }
