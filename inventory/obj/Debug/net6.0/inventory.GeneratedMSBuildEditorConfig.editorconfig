@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = inventory
-build_property.ProjectDir = C:\Users\baltazar.biverstal\Documents\programering2\inventory\inventory\
+build_property.ProjectDir = c:\Users\baltazar.biverstal\Documents\programering2\inventory\inventory\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
