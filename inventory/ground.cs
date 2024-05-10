@@ -10,6 +10,7 @@ public class Ground
     {
         Console.WriteLine("");
         Console.WriteLine("På marken finns det ");
+        Console.WriteLine("");
         foreach (Item i in items)
         {
             if (i is WeightedItem)
@@ -27,6 +28,7 @@ public class Ground
             Console.Write(i.Name + "(" + i.Space + ")" + ", ");
 
         }
+        Console.WriteLine("");
     }
     //void för att skriva ut alla items i ground som skriver även ut weight och Length om de har det
 
@@ -50,7 +52,7 @@ public class Ground
     }
     public int Answer(int groundAmount)
     {
-        Console.WriteLine();
+        Console.WriteLine("");
         Console.WriteLine("Skriv ett nummer mellan 1-" + groundAmount);
         while (true)
         {

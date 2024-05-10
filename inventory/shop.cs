@@ -7,18 +7,8 @@ public class Shop
     public List<ShopItem> shopItems = new();
     public class ShopItem : Item
     {
-        int _cost = (_space * 10);
-        public int Cost
-        {
-            get
-            {
-                return _cost;
-            }
-            set
-            {
-                _cost = value;
-            }
-        }
+        public int Cost { get; set; }
+
         bool _soldOut = false;
         public bool SoldOut
         {
@@ -30,6 +20,10 @@ public class Shop
             {
                 _soldOut = value;
             }
+        }
+        public ShopItem()
+        {
+            Cost = (Space * 10);
         }
     }
     public Shop()
@@ -45,7 +39,7 @@ public class Shop
     }
     public bool AskOpenShop()
     {
-        Console.WriteLine();
+        Console.WriteLine("");
         Console.WriteLine("Vill du öppna shopen? Y/N");
         string? i = Console.ReadLine();
         if (i.ToUpper() == "Y")
@@ -74,6 +68,7 @@ public class Shop
     }
     public void ListItems()
     {
+        Console.WriteLine("");
         Console.WriteLine("I shopen finns: ");
         foreach (var item in shopItems)
         {
@@ -91,7 +86,7 @@ public class Shop
     public bool Value(string name, int value)
     {
         Console.Clear();
-        Console.WriteLine("Jag Kan ge dig " + value + "för ditt senaste item" + name);
+        Console.WriteLine("Jag Kan ge dig " + value + " för ditt senaste item " + name);
         Console.WriteLine("Vill du sälja det Y/N");
         if (function.YesAndNo())
         {

@@ -7,7 +7,7 @@ public class Item
     //items namn
     int _value = Random.Shared.Next(10, 200);
     public int Value { get { return _value; } set { } }
-    static protected int _space = Random.Shared.Next(1, 20);
+    protected int _space = Random.Shared.Next(1, 20);
     public int Space
     {
         get { return _space; }
