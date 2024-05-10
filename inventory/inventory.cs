@@ -2,6 +2,7 @@ using System.Dynamic;
 
 public class Inventory
 {
+    public int coins { get; set; }
     int _inventorySpace = 20;
     public int InventorySpace
     {

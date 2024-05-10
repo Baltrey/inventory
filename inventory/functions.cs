@@ -22,28 +22,7 @@ public class Function
         //retunerar numret som j
     }
     //kollar så att det är ett nummer och inte text
-    public int Answer(int groundAmount)
-    {
-        Console.WriteLine("");
-        Console.WriteLine("Skriv ett nummer mellan 1-" + groundAmount);
-        while (true)
-        {
-            int j = GetNummber();
-            if (j > 0 && j <= groundAmount)
-            {
 
-                return j;
-            }
-            //kollar att numret är inom det angivna intervalet
-
-            else
-            {
-                Console.WriteLine("SKRIV ETT NUMMER MELLAN 1-" + groundAmount + "!!!!");
-            }
-            //ger instruktioner ifall fel input
-        }
-    }
-    //får ett answer och retunerar en int
     public void Beep()
     {
         for (int s = 0; s < 10; s++)
@@ -54,12 +33,9 @@ public class Function
         //kör loopen 10 gånger
     }
     //lägger till en beep funtion
-    public bool PlayAgain()
+
+    public bool YesAndNo()
     {
-        Console.Clear();
-        Console.WriteLine("Du fick slut på plats i ditt inventory");
-        Console.WriteLine("");
-        Console.WriteLine("vill du köra igen Y/N");
         string? i = Console.ReadLine();
         if (i.ToUpper() == "Y")
         {

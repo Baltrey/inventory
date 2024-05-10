@@ -2,6 +2,7 @@ using System.Runtime.CompilerServices;
 
 public class Ground
 {
+    Function function = new();
     public List<Item> items = new() { };
     //skapar en lista items
 
@@ -17,6 +18,10 @@ public class Ground
             }
             if (i is Weapon)
             {
+                if (((Weapon)i).IsShiny)
+                {
+                    Console.Write("Shiny ");
+                }
                 Console.Write(((Weapon)i).Length);
             }
             Console.Write(i.Name + "(" + i.Space + ")" + ", ");
@@ -43,4 +48,27 @@ public class Ground
         }
         //skapar weapon items i listan items
     }
+    public int Answer(int groundAmount)
+    {
+        Console.WriteLine();
+        Console.WriteLine("Skriv ett nummer mellan 1-" + groundAmount);
+        while (true)
+        {
+            int j = function.GetNummber();
+            if (j > 0 && j <= groundAmount)
+            {
+
+                return j;
+            }
+            //kollar att numret är inom det angivna intervalet
+
+            else
+            {
+                Console.WriteLine("SKRIV ETT NUMMER MELLAN 1-" + groundAmount + "!!!!");
+            }
+            //ger instruktioner ifall fel input
+        }
+    }
+    //får ett answer och retunerar en int
+
 }

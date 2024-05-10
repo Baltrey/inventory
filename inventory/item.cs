@@ -1,17 +1,16 @@
 using System.Dynamic;
+using System.Runtime.CompilerServices;
 
 public class Item
 {
-    public string? Name;
+    public string? Name { get; set; }
     //items namn
-
-    int _space = Random.Shared.Next(1, 20);
+    int _value = Random.Shared.Next(10, 200);
+    public int Value { get { return _value; } set { } }
+    static protected int _space = Random.Shared.Next(1, 20);
     public int Space
     {
-        get
-        {
-            return _space;
-        }
+        get { return _space; }
         set
         {
             if (value >= 0 && value < 20)
@@ -27,7 +26,7 @@ public class Item
 //skapar klassen items
 public class WeightedItem : Item
 {
-    public string? Weight;
+    public string? Weight { get; set; }
     string[] _namesWeightedItems = { "Pouch", "Arrows", "Copper Ingot", "Iron Ingot", "Gold Ingot" };
 
     private static bool _lastWasHeavy = false;
@@ -68,9 +67,21 @@ public class WeightedItem : Item
 //skapar subclass weighted items av item
 public class Weapon : WeightedItem
 {
-    public string? Length;
+    public string? Length { get; set; }
     string[] _namesWeapon = { "Axe", "Sword", "Bow", "Dagger", "Pickaxe" };
     private static bool _lastWasLong = false;
+    bool _isShiny = false;
+    public bool IsShiny
+    {
+        get
+        {
+            return _isShiny;
+        }
+        set
+        {
+            _isShiny = value;
+        }
+    }
     public Weapon()
     {
         int number = Random.Shared.Next(_namesWeapon.Length);
@@ -78,7 +89,7 @@ public class Weapon : WeightedItem
         Length = Getlength();
         if (Space >= 18)
         {
-            Name = "Shiny " + Name;
+            IsShiny = true;
         }
         _lastWasLong = !_lastWasLong;
     }
@@ -107,10 +118,3 @@ public class Weapon : WeightedItem
 
 }
 //subclass weapon av weightedItems
-public class Shiny : Weapon
-{
-    public bool IsShiny;
-
-
-}
-//Skapar en subclass Weapon av Weighteditems
