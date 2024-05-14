@@ -4,40 +4,37 @@ using System.Security.Cryptography.X509Certificates;
 public class Shop
 {
     Function function = new();
-    public List<ShopItem> shopItems = new();
-    public class ShopItem : Item
-    {
-        public int Cost { get; set; }
-
-        bool _soldOut = false;
-        public bool SoldOut
-        {
-            get
-            {
-                return _soldOut;
-            }
-            set
-            {
-                _soldOut = value;
-            }
-        }
-        public ShopItem()
-        {
-            Cost = (Space * 10);
-        }
-    }
+    public List<ShopItem> ShopItems { get; set; } = new();
+    ShopFunction shopFunction = new();
     public Shop()
     {
+
         string[] TypePotion = { "Health", "Speed", "Poison", "Strength", "Weakness", "Slowness", "Jump" };
         for (int i = 0; i < 10; i++)
         {
             ShopItem shopItem = new();
             int index = Random.Shared.Next(1, (TypePotion.Length));
             shopItem.Name = (TypePotion[index] + " Potion");
-            shopItems.Add(shopItem);
+            ShopItems.Add(shopItem);
         }
     }
-    public bool AskOpenShop()
+    public void OpenShop(Inventory inventory, Ground ground, List<ShopItem> shopItems)
+    {
+        if (BuySell())
+        {
+            Console.WriteLine("Du har " + inventory.coins + " coins");
+            ListItems(shopItems);
+            int index = (ground.Answer(shopItems.Count) - 1);
+            shopFunction.buy(inventory, shopItems, index);
+        }
+        else
+        {
+
+        }
+
+        //frågar om du vill öppna shopen
+    }
+    bool AskOpenShop()
     {
         Console.WriteLine("");
         Console.WriteLine("Vill du öppna shopen? Y/N");
@@ -51,8 +48,9 @@ public class Shop
         {
             return false;
         }
+
     }
-    public bool BuySell()
+    bool BuySell()
     {
         Console.WriteLine("Vill du köpa eller sälja? 1 för att köpa 2 för att sälja");
         int i = Answer(2);
@@ -64,24 +62,6 @@ public class Shop
         {
             return false;
         }
-
-    }
-    public void ListItems()
-    {
-        Console.WriteLine("");
-        Console.WriteLine("I shopen finns: ");
-        foreach (var item in shopItems)
-        {
-            if (item.SoldOut)
-            {
-                Console.Write("SOLD OUT!");
-            }
-            else
-            {
-                Console.Write(item.Name + "(" + "Kostar " + item.Cost + ")" + ", ");
-            }
-        }
-        Console.WriteLine("skriv ett nummer till följande item i följd");
     }
     public bool Value(string name, int value)
     {
@@ -117,4 +97,22 @@ public class Shop
         }
     }
     //får ett answer och retunerar en int
+    public void ListItems(List<ShopItem> shopItems)
+    {
+        Console.WriteLine("");
+        Console.WriteLine("I shopen finns: ");
+        foreach (var item in shopItems)
+        {
+            if (item.SoldOut)
+            {
+                Console.Write("SOLD OUT!");
+            }
+            else
+            {
+                Console.Write(item.Name + "(" + "Kostar " + item.Cost + ")" + ", ");
+            }
+        }
+        Console.WriteLine("skriv ett nummer till följande item i följd");
+    }
+
 }

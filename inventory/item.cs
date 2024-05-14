@@ -118,3 +118,24 @@ public class Weapon : WeightedItem
 
 }
 //subclass weapon av weightedItems
+public class ShopItem : Item
+{
+    public int Cost { get; set; }
+
+    bool _soldOut = false;
+    public bool SoldOut
+    {
+        get
+        {
+            return _soldOut;
+        }
+        set
+        {
+            _soldOut = value;
+        }
+    }
+    public ShopItem()
+    {
+        Cost = (Space * 10);
+    }
+}

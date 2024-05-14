@@ -26,43 +26,9 @@ while (true)
             inventory.Items.Push(ground.items[i]);
             ground.items.RemoveAt(i);
             inventory.ListItemsInventory();
-            if (shop.AskOpenShop())
-            {
-                if (shop.BuySell())
-                {
-                    Console.WriteLine("Du har " + inventory.coins + " coins");
-                    shop.ListItems();
-                    int index = (ground.Answer(shop.shopItems.Count) - 1);
+            shop.OpenShop(inventory, ground, shop.ShopItems);
 
 
-                    if (inventory.coins >= ((shop.shopItems[index]).Cost))
-                    {
-                        inventory.coins -= ((shop.shopItems[index]).Cost);
-                        inventory.Items.Push(shop.shopItems[i]);
-                        shop.shopItems.RemoveAt(index);
-                        inventory.ListItemsInventory();
-                    }
-                    else
-                    {
-                        Console.WriteLine("för lite pengar:(");
-                    }
-
-                }
-                else
-                {
-                    if (shop.Value((inventory.Items.Peek().Name), (inventory.Items.Peek().Value)))
-                    {
-                        inventory.coins += (inventory.Items.Peek().Value);
-                        inventory.InventorySpace += (inventory.Items.Peek().Space);
-                        inventory.Items.Pop();
-                    }
-                    else
-                    {
-
-                    }
-                }
-            }
-            //frågar om du vill öppna shopen
         }
         //kollar om inventory space är mer än 0, om det är det kör spelet vidare. Annars stängs det av.
         else
