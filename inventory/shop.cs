@@ -20,18 +20,21 @@ public class Shop
     }
     public void OpenShop(Inventory inventory, Ground ground, List<ShopItem> shopItems)
     {
-        if (BuySell())
+        if (AskOpenShop())
         {
-            Console.WriteLine("Du har " + inventory.coins + " coins");
-            ListItems(shopItems);
-            int index = (ground.Answer(shopItems.Count) - 1);
-            shopFunction.buy(inventory, shopItems, index);
-        }
-        else
-        {
-            shopFunction.sell(inventory);
-        }
+            if (BuySell())
+            {
+                Console.WriteLine("Du har " + inventory.coins + " coins");
+                ListItems(shopItems);
+                int index = (ground.Answer(shopItems.Count) - 1);
+                shopFunction.buy(inventory, shopItems, index);
+            }
+            else
+            {
+                shopFunction.sell(inventory);
+            }
 
+        }
         //frågar om du vill öppna shopen
     }
     bool AskOpenShop()

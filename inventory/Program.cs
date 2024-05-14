@@ -20,6 +20,7 @@ while (true)
         int i = (ground.Answer(ground.items.Count) - 1);
         if (inventory.InventorySpace > 0)
         {
+            inventory.AddItem(inventory, ground, i);
             inventory.ListItemsInventory(inventory);
             shop.OpenShop(inventory, ground, shop.ShopItems);
 

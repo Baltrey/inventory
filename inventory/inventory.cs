@@ -61,5 +61,11 @@ public class Inventory
         inventory.Items.Clear();
     }
     //startar om inventory, tar bort allt i det och tar upp space till max
+    public void AddItem(Inventory inventory, Ground ground, int index)
+    {
+        inventory.InventorySpace -= ground.items[index].Space;
+        inventory.Items.Push(ground.items[index]);
+        ground.items.RemoveAt(index);
+    }
 }
 //skapar classen inventory med en lista som kan innehålla items
