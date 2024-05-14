@@ -34,11 +34,11 @@ public class Inventory
 
     //gör så man inte kan ändra på värdet på space
     public Stack<Item> Items = new();
-    public void ListItemsInventory()
+    public void ListItemsInventory(Inventory inventory)
     {
         Console.Clear();
         Console.WriteLine("Du har: ");
-        foreach (Item i in Items)
+        foreach (Item i in inventory.Items)
         {
             if (i is WeightedItem)
             {
@@ -52,13 +52,13 @@ public class Inventory
             Console.Write(i.Name + ", ");
 
         }
-        Console.WriteLine("och plats kvar i inventory " + InventorySpace);
+        Console.WriteLine("och plats kvar i inventory " + inventory.InventorySpace);
         //void för att skriva ut alla items i inventory som skriver även ut weight och Length om de har det
     }
-    public void Reset()
+    public void Reset(Inventory inventory)
     {
-        _inventorySpace = 20;
-        Items.Clear();
+        inventory.InventorySpace = 20;
+        inventory.Items.Clear();
     }
     //startar om inventory, tar bort allt i det och tar upp space till max
 }

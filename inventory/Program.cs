@@ -6,26 +6,21 @@ Shop shop = new();
 Function function = new();
 //skapar ground och inventory från klasserna ground och inventory i main programet, samt functions för kommandon
 
-bool Game = true;
+bool Game = false;
 //variabeln för spelet
 
 while (true)
 {
-    ground.Groundstart();
-    Game = true;
 
     //metoder för att starta
-
+    Game = function.StartGame(inventory, ground, Game);
     while (Game)
     {
-        ground.ListItemsGround();
+        ground.ListItemsGround(ground);
         int i = (ground.Answer(ground.items.Count) - 1);
         if (inventory.InventorySpace > 0)
         {
-            inventory.InventorySpace = inventory.InventorySpace - ground.items[i].Space;
-            inventory.Items.Push(ground.items[i]);
-            ground.items.RemoveAt(i);
-            inventory.ListItemsInventory();
+            inventory.ListItemsInventory(inventory);
             shop.OpenShop(inventory, ground, shop.ShopItems);
 
 
@@ -43,8 +38,6 @@ while (true)
     Console.WriteLine("vill du köra igen Y/N");
     if (function.YesAndNo())
     {
-        inventory.Reset();
-        ground.Groundstart();
     }
     else
     {

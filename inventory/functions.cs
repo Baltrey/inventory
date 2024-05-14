@@ -1,5 +1,6 @@
 using System.Dynamic;
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
 public class Function
 {
     public int GetNummber()
@@ -49,4 +50,15 @@ public class Function
 
     }
     //funktion för att spelaren ska kunna köra igen, kollar input Y/N
+    public bool StartGame(Inventory inventory, Ground ground, bool Game)
+    {
+        Reset(inventory, ground);
+        Game = true;
+        return Game;
+    }
+    public void Reset(Inventory inventory, Ground ground)
+    {
+        inventory.Reset(inventory);
+        ground.Groundstart(ground);
+    }
 }

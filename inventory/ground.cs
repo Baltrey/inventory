@@ -6,12 +6,12 @@ public class Ground
     public List<Item> items = new() { };
     //skapar en lista items
 
-    public void ListItemsGround()
+    public void ListItemsGround(Ground ground)
     {
         Console.WriteLine("");
         Console.WriteLine("På marken finns det ");
         Console.WriteLine("");
-        foreach (Item i in items)
+        foreach (Item i in ground.items)
         {
             if (i is WeightedItem)
             {
@@ -32,9 +32,9 @@ public class Ground
     }
     //void för att skriva ut alla items i ground som skriver även ut weight och Length om de har det
 
-    public void Groundstart()
+    public void Groundstart(Ground ground)
     {
-        items.Clear();
+        ground.items.Clear();
 
         for (int i = 0; i < 6; i++)
         {

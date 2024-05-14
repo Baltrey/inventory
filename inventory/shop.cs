@@ -29,7 +29,7 @@ public class Shop
         }
         else
         {
-
+            shopFunction.sell(inventory);
         }
 
         //frågar om du vill öppna shopen
